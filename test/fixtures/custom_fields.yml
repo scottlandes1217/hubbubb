@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  custom_object: one
+  name: MyString
+  field_type: MyString
+
+two:
+  custom_object: two
+  name: MyString
+  field_type: MyString

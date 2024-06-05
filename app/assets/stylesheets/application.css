@@ -1,0 +1,111 @@
+body {
+  margin: 0px;
+}
+
+/* Basic styling for the navigation menu */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  list-style: none;  /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex;  /* Use flexbox for alignment */
+  justify-content: space-between;  /* Space items to left and right */
+  height: 50px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;  /* Use flexbox for horizontal alignment */
+}
+
+.navbar li {
+  float: left;
+  display: inline-block;
+}
+
+.navbar li a, .dropbtn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown:hover {
+  background-color: #111;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-icon .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 5px 5px 0px 5px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar li a, .dropbtn {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;  /* Match with the navbar background */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0px;
+}
+
+.dropdown-search {
+  display: none;
+  position: absolute;
+  background-color: #333;  /* Match with the navbar background */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;  /* Match the text color */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover, .dropdown-search a:hover {
+  background-color: #111;
+}
+
+.gear-icon {
+  width: 35px;
+  height: auto;
+}
+
+.navbar-right {
+  margin-left: auto;  /* Push right-aligned items to the right */
+}

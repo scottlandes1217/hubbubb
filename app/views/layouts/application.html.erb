@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hubbubb</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Custom Objects</a>
+        <div class="dropdown-search">
+          <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search objects..">
+          </div>
+          <div id="objectList">
+            <a href="<%= root_path %>">Home</a>
+            <% @custom_objects.each do |object| %>
+              <a href="<%= custom_object_path(object) %>"><%= object.name %></a>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-right">
+      <% if user_signed_in? %>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Profile</a>
+          <div class="dropdown-content">
+            <%= link_to 'Edit Profile', edit_user_registration_path %>
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+          </div>
+        </li>
+        <li class="dropdown-icon">
+          <a href="javascript:void(0)" class="dropbtn">
+            <%= image_tag('gear_icon.png', alt: 'Setup', class: 'gear-icon') %>
+          </a>
+          <div class="dropdown-content">
+            <%= link_to 'Setup', setup_dashboard_path %>
+          </div>
+        </li>
+      <% else %>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li><%= link_to 'Log In', new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
+
+  <%= yield %>
+</body>
+</html>

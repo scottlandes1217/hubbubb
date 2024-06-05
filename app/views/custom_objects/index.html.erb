@@ -1,0 +1,23 @@
+<h1>Custom Objects</h1>
+<%= link_to 'New Custom Object', new_custom_object_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @custom_objects.each do |custom_object| %>
+      <tr>
+        <td><%= custom_object.name %></td>
+        <td><%= custom_object.description %></td>
+        <td><%= link_to 'Show', custom_object %></td>
+        <td><%= link_to 'Edit', edit_custom_object_path(custom_object) %></td>
+        <td><%= link_to 'Destroy', custom_object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

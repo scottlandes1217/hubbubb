@@ -1,0 +1,19 @@
+<h1>Custom Records</h1>
+<%= link_to 'New Custom Record', new_custom_object_custom_record_path(@custom_object) %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @custom_records.each do |custom_record| %>
+      <tr>
+        <td><%= custom_record.data %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back to Custom Object', @custom_object %>

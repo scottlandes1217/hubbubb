@@ -1,0 +1,5 @@
+<h1><%= @custom_field.name %></h1>
+<p>Field Type: <%= @custom_field.field_type %></p>
+
+<%= link_to 'Edit', edit_custom_object_custom_field_path(@custom_object, @custom_field) %> |
+<%= link_to 'Back to Custom Object', @custom_object %>
